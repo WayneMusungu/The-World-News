@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %} 
+{% load static %}
+
+    {% block styles %} 
+        {% bootstrap_css %}
+        <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    {% endblock %}
+
+    {% block title %}
+        The World News
+    {% endblock %}
+
+    {% block content %}
+        <div class="container"><h1>Welcome to the World News</h1></div>
+    {% endblock %}
+
+    <!-- SCRIPTS -->
+    {% block scripts %}
+        {% bootstrap_javascript %}
+    {% endblock %}

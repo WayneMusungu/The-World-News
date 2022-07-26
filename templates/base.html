@@ -1,0 +1,32 @@
+{% load bootstrap5 %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% block styles %} 
+        {% bootstrap_css %}
+    {% endblock %}
+
+    <link rel="icon" type="image/png" href="{% static 'images/worldnews.jpg' %}">
+    <title>
+
+        {% block title %}
+            The World News
+        {% endblock %}
+
+    </title>
+</head>
+<body>
+
+    {% block content %} {% endblock %}
+
+    <!-- SCRIPTS -->
+    {% block scripts %}
+        {% bootstrap_javascript %}
+    {% endblock %}
+
+</body>
+</html>
