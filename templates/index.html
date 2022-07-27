@@ -1,21 +1,57 @@
 {% extends 'base.html' %}
-{% load bootstrap5 %} 
+{% load bootstrap5 %}
 {% load static %}
 
-    {% block styles %} 
-        {% bootstrap_css %}
-        <link rel="stylesheet" href="{% static 'css/index.css' %}">
-    {% endblock %}
+{% block styles %}
+{% bootstrap_css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
 
-    {% block title %}
-        The World News
-    {% endblock %}
+{% block title %}
+The World News
+{% endblock %}
 
-    {% block content %}
-    
-    {% endblock %}
+{% block content %}
+<div class="container">
 
-    <!-- SCRIPTS -->
-    {% block scripts %}
-        {% bootstrap_javascript %}
-    {% endblock %}
+
+    <div class="row">
+        {% for i in articles %}
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{{ i.urlToImage }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">{{ i.author }}</p>
+                    <h5 class="card-title">{{ i.title }}</h5>
+                    <p class="card-title">{{ i.source.name }}</p>
+                    <p class="card-text">{{ i.description }}</p>
+                    <hr>
+                    <small>Published At: {{ i.publishedAt }}</small>
+                    <p><a href="{{ i.url }}" target="_blank" class="btn btn-success btn-lg">See News</a></p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+<hr>
+<footer>
+    <div class="row">
+        <div class="col-md-6">
+            <p>Copyright &copy; The Worlds News</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+            <a href="#" class="text-dark">Terms of Use</a>
+            <span class="text-muted mx-2">|</span>
+            <a href="#" class="text-dark">Privacy Policy</a>
+        </div>
+    </div>
+</footer>
+</div>
+{% endblock %}
+
+<!-- SCRIPTS -->
+{% block scripts %}
+{% bootstrap_javascript %}
+{% endblock %}

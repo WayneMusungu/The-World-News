@@ -2,7 +2,7 @@
 Import request module
 '''
 import requests
-import wayne
+import newsapi.wayne as wayne
 
 '''
 Making a get request
