@@ -23,12 +23,13 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Categories</a>
 
                         <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item">Business</a>
-                            <a href="#" class="dropdown-item">Entertainment</a>
-                            <a href="#" class="dropdown-item">Health</a>
-                            <a href="#" class="dropdown-item">Science</a>
-                            <a href="#" class="dropdown-item">Sports</a>
-                            <a href="#" class="dropdown-item">Technology</a>
+                            <a href="{% url 'index' %}?category=business" class="dropdown-item">Business</a>
+                            <a href="{% url 'index' %}?category=entertainment" class="dropdown-item">Entertainment</a>
+                            <a href="{% url 'index' %}?category=general" class="dropdown-item">General</a>
+                            <a href="{% url 'index' %}?category=health" class="dropdown-item">Health</a>
+                            <a href="{% url 'index' %}?category=science" class="dropdown-item">Science</a>
+                            <a href="{% url 'index' %}?category=sports" class="dropdown-item">Sports</a>
+                            <a href="{% url 'index' %}?category=technology" class="dropdown-item">Technology</a>
                         </div>
                     </div>
                 </div>
