@@ -1,3 +1,14 @@
+body{
+    /* min-height: 100vh; */
+    /* max-width: 500px; */
+    /* max-width: 100.5%; */
+    background-color: papayawhip !important; 
+   
+
+
+   
+}
+
 h1{
     color: black;
     text-align: center;
@@ -15,3 +26,4 @@ h1{
 .card-img-top{
     height: 200px;
 }
+
