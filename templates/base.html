@@ -22,7 +22,11 @@
 </head>
 <body>
 
-    {% include 'navbar.html' %}{% block content %} {% endblock %}
+    {% comment %}
+    {% include 'navbar.html' %}
+    {% endcomment %}
+    
+    {% block content %} {% endblock %}
 
     <!-- SCRIPTS -->
     {% block scripts %}

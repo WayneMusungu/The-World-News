@@ -2,11 +2,26 @@ body{
     /* min-height: 100vh; */
     /* max-width: 500px; */
     /* max-width: 100.5%; */
-    background-color: papayawhip !important; 
-   
+    background-color: papayawhip !important;  
+}
+.navbar{
+    top: 0;
+    /* position: fixed; */
+    /* width: 100.5%; */
+    margin: 0 0 1em 0;
+}
 
+.navbar-dark .navbar-brand {
+    color: #3CCF4E;
+}
 
-   
+.nav-item .messages .nav-link{
+    text-decoration: none;
+    color: antiquewhite;
+}
+
+.nav-nab{
+    margin-top: 10px;
 }
 
 h1{
