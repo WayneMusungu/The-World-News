@@ -6,8 +6,6 @@ import newsapi.wayne as wayne
 
 def index(request):
     
-    # url = f'https://newsapi.org/v2/top-headlines?country=us&apiKey={wayne.NEWS_API_KEY}'
-    
     country = request.GET.get('country')
     
     if country:
