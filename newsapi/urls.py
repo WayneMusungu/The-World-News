@@ -7,5 +7,6 @@ urlpatterns = [
     path('united-arab-emirates/',views.uae, name='uae'),
     path('argentina/',views.argentina, name='argentina'),
     path('austria/',views.austria, name='austria'), 
-    path('australia/',views.australia, name='australia'),    
+    path('australia/',views.australia, name='australia'),
+    path('belgium/',views.belgium, name='belgium'),     
 ]
