@@ -6,19 +6,24 @@ import newsapi.wayne as wayne
 
 def index(request):
     
+    # url = f'https://newsapi.org/v2/top-headlines?country=us&apiKey={wayne.NEWS_API_KEY}'
+    
     country = request.GET.get('country')
-    url = f'https://newsapi.org/v2/top-headlines?country=us&apiKey={wayne.NEWS_API_KEY}'
     
-    url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={wayne.NEWS_API_KEY}'
-    response = requests.get(url)
-    data = response.json()
-    articles = data['articles']
-    
-    
+    if country:
+        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={wayne.NEWS_API_KEY}'
+        response = requests.get(url)
+        data = response.json()
+        articles = data['articles']
+        
+    else:
+        url = f'https://newsapi.org/v2/top-headlines?country=us&apiKey={wayne.NEWS_API_KEY}'
+        response = requests.get(url)
+        data = response.json()
+        articles = data['articles']
+        
     context = {
         'articles' : articles
     }
-    
-    
-    
+        
     return render (request, "index.html", context)
