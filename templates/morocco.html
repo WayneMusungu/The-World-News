@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+{% load static %}
+
+{% block styles %}
+{% bootstrap_css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block title %}
+The World News
+{% endblock %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a href="#" class="navbar-brand">The Worlds News</a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+                <a href="#" class="nav-item nav-link active">Home</a>
+                <a href="#" class="nav-item nav-link">Services</a>
+                <a href="#" class="nav-item nav-link">About</a>
+                <a href="#" class="nav-item nav-link">Contact</a>
+            </div>
+            <div class="nav-item dropdown">
+                <div class="messages">
+
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Categories</a>
+
+                    <div class="dropdown-menu">
+                        <a href="{% url 'morocco' %}?category=business" class="dropdown-item">Business</a>
+                        <a href="{% url 'morocco' %}?category=entertainment" class="dropdown-item">Entertainment</a>
+                        <a href="{% url 'morocco' %}?category=general" class="dropdown-item">General</a>
+                        <a href="{% url 'morocco' %}?category=health" class="dropdown-item">Health</a>
+                        <a href="{% url 'morocco' %}?category=science" class="dropdown-item">Science</a>
+                        <a href="{% url 'morocco' %}?category=sports" class="dropdown-item">Sports</a>
+                        <a href="{% url 'morocco' %}?category=technology" class="dropdown-item">Technology</a>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-nab">
+                <form class="d-flex" method="get">
+                    <input class="form-control me-2" type="text" placeholder="Search countries" name="country" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+            <div class="navbar-nav ms-auto">
+                <a href="#" class="nav-item nav-link">Subscribe</a>
+                <a href="#" class="nav-item nav-link">Logout</a>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <form class="d-flex" method="get">
+        <input class="form-control me-2" type="text" placeholder="Search category" name="category" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+
+
+    <div class="row">
+        {% for i in articles %}
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{{ i.urlToImage }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">{{ i.author }}</p>
+                    <h5 class="card-title">{{ i.title }}</h5>
+                    <p class="card-title">{{ i.source.name }}</p>
+                    <p class="card-text">{{ i.description }}</p>
+                    <hr>
+                    <small>Published At: {{ i.publishedAt }}</small>
+                    <p><a href="{{ i.url }}" target="_blank" class="btn btn-success btn-lg">See News</a></p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+<hr>
+<footer>
+    <div class="row">
+        <div class="col-md-6">
+            <p>Copyright &copy; The Worlds News</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+            <a href="#" class="text-dark">Terms of Use</a>
+            <span class="text-muted mx-2">|</span>
+            <a href="#" class="text-dark">Privacy Policy</a>
+        </div>
+    </div>
+</footer>
+</div>
+{% endblock %}
+
+<!-- SCRIPTS -->
+{% block scripts %}
+{% bootstrap_javascript %}
+{% endblock %}
