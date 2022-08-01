@@ -28,10 +28,10 @@ The World News
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Countries</a>
     
                         <div class="dropdown-menu">
-                            
-                            <a href="{% url 'argentina' %}" class="dropdown-item">Argentina 🇦🇷</a> 
+                            <a href="{% url 'argentina' %}" class="dropdown-item">Argentina 🇦🇷</a>
                             <a href="{% url 'australia' %}" class="dropdown-item">Australia 🇦🇺</a>
                             <a href="{% url 'belgium' %}" class="dropdown-item">Belgium 🇧🇪 </a> 
+                            <a href="{% url 'brazil' %}"class="dropdown-item">Brazil 🇧🇷</a>
                             <a href="{% url 'bulgaria' %}" class="dropdown-item">Bulgaria 🇧🇬</a> 
                             <a href="{% url 'canada' %}" class="dropdown-item">Canada 🇨🇦</a> 
                             <a href="{% url 'china' %}" class="dropdown-item">China 🇨🇳</a>
@@ -42,18 +42,18 @@ The World News
                             <a href="{% url 'italy' %}" class="dropdown-item">Italy 🇮🇹</a>
                             <a href="{% url 'japan' %}" class="dropdown-item">Japan 🇯🇵</a>
                             <a href="{% url 'morocco' %}" class="dropdown-item">Morocco 🇲🇦</a>
-                            <a href="{% url 'netherlands' %}" class="dropdown-item">Netherlands</a>
+                            <a href="{% url 'netherlands' %}" class="dropdown-item">Netherlands 🇳🇱</a>
                             <a href="{% url 'nigeria' %}" class="dropdown-item">Nigeria 🇳🇬</a>
                             <a href="{% url 'portugal' %}" class="dropdown-item">Portugal 🇵🇹</a>
                             <a href="{% url 'southafrica' %}" class="dropdown-item">South Africa 🇿🇦</a>
                             <a href="{% url 'southkorea' %}" class="dropdown-item">South Korea 🇰🇷</a>
                             <a href="{% url 'uae' %}" class="dropdown-item">United Arab Emirates 🇦🇪</a>
-                            <a href="{% url 'uk' %}" class="dropdown-item">United Kingom  🇬🇧</a>
+                            <a href="{% url 'uk' %}" class="dropdown-item">United Kingdom  🇬🇧</a>
+                            <a href="{% url 'index' %}" class="dropdown-item">USA 🇺🇸</a> 
                             <a href="{% url 'ukraine' %}" class="dropdown-item">Ukraine 🇺🇦</a>
                         </div>
                     </div>
                 </div>
-
 
 
                 <a href="#" class="nav-item nav-link">Services</a>
@@ -90,7 +90,7 @@ The World News
     </div>
 </nav>
 <div class="container">
-    <h1>Austria News 🇦🇹</h1>
+    <h1>Austria 🇦🇹</h1>
 
     <div class="row">
         {% for i in articles %}

@@ -21,6 +21,43 @@ The World News
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav">
                 <a href="#" class="nav-item nav-link active">Home</a>
+
+                <div class="nav-item dropdown">
+                    <div class="messages">
+    
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Countries</a>
+    
+                        <div class="dropdown-menu">
+                            <a href="{% url 'argentina' %}" class="dropdown-item">Argentina 🇦🇷</a>
+                            <a href="{% url 'australia' %}" class="dropdown-item">Australia 🇦🇺</a>
+                            <a href="{% url 'austria' %}" class="dropdown-item">Austria 🇦🇹</a>
+                            <a href="{% url 'belgium' %}" class="dropdown-item">Belgium 🇧🇪 </a> 
+                            <a href="{% url 'brazil' %}"class="dropdown-item">Brazil 🇧🇷</a>
+                            <a href="{% url 'bulgaria' %}" class="dropdown-item">Bulgaria 🇧🇬</a> 
+                            <a href="{% url 'canada' %}" class="dropdown-item">Canada 🇨🇦</a> 
+                            <a href="{% url 'china' %}" class="dropdown-item">China 🇨🇳</a>
+                            <a href="{% url 'egypt' %}" class="dropdown-item">Egypt 🇪🇬</a> 
+                            <a href="{% url 'france' %}" class="dropdown-item">France 🇫🇷</a>
+                            <a href="{% url 'germany' %}" class="dropdown-item">Germany 🇩🇪</a>
+                            <a href="{% url 'israel' %}" class="dropdown-item">Israel 🇮🇱</a>
+                            <a href="{% url 'italy' %}" class="dropdown-item">Italy 🇮🇹</a>
+                            <a href="{% url 'japan' %}" class="dropdown-item">Japan 🇯🇵</a>
+                            <a href="{% url 'morocco' %}" class="dropdown-item">Morocco 🇲🇦</a>
+                            <a href="{% url 'netherlands' %}" class="dropdown-item">Netherlands 🇳🇱</a>
+                            <a href="{% url 'portugal' %}" class="dropdown-item">Portugal 🇵🇹</a>
+                            <a href="{% url 'southafrica' %}" class="dropdown-item">South Africa 🇿🇦</a>
+                            <a href="{% url 'southkorea' %}" class="dropdown-item">South Korea 🇰🇷</a>
+                            <a href="{% url 'uae' %}" class="dropdown-item">United Arab Emirates 🇦🇪</a>
+                            <a href="{% url 'uk' %}" class="dropdown-item">United Kingdom 🇬🇧</a>
+                            <a href="{% url 'index' %}" class="dropdown-item">USA 🇺🇸</a> 
+                            <a href="{% url 'ukraine' %}" class="dropdown-item">Ukraine 🇺🇦</a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
                 <a href="#" class="nav-item nav-link">Services</a>
                 <a href="#" class="nav-item nav-link">About</a>
                 <a href="#" class="nav-item nav-link">Contact</a>
@@ -55,10 +92,7 @@ The World News
     </div>
 </nav>
 <div class="container">
-    <form class="d-flex" method="get">
-        <input class="form-control me-2" type="text" placeholder="Search category" name="category" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
+    <h1>Nigeria 🇳🇬</h1>
 
 
     <div class="row">
