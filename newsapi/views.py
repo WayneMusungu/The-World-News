@@ -30,7 +30,7 @@ def index(request):
         url = f'https://newsapi.org/v2/top-headlines?country=us&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
-        articles = data['articles']
+       
         
         
         
@@ -49,7 +49,7 @@ def china(request):
         url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
-        articles = data['articles']
+        articles= data['articles']
         
     elif category:
         url = f'https://newsapi.org/v2/top-headlines?country=cn&category={category}&apiKey={NEWS_API_KEY}'
