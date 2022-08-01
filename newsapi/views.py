@@ -30,9 +30,9 @@ def index(request):
         url = f'https://newsapi.org/v2/top-headlines?country=us&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
-        articles=data['articles']
-        
-        
+        # print(dir(data))
+        print(data)
+        articles = data['articles']
         
     context = {
         'articles' : articles
