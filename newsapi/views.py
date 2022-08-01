@@ -1,7 +1,11 @@
 from unicodedata import category
 from django.shortcuts import render, redirect
 import requests
-import newsapi.wayne as wayne
+from decouple import config
+# import newsapi.wayne as wayne
+
+
+NEWS_API_KEY = config('NEWS_API_KEY')
 
 # Create your views here.
 
@@ -11,19 +15,19 @@ def index(request):
     category = request.GET.get('category')
     
     if country:
-        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     elif category:
-        url = f'https://newsapi.org/v2/top-headlines?country=us&category={category}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=us&category={category}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     else:
-        url = f'https://newsapi.org/v2/top-headlines?country=us&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=us&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
@@ -42,19 +46,19 @@ def china(request):
     category = request.GET.get('category')
     
     if country:
-        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     elif category:
-        url = f'https://newsapi.org/v2/top-headlines?country=cn&category={category}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=cn&category={category}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     else:
-        url = f'https://newsapi.org/v2/top-headlines?country=cn&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=cn&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
@@ -74,19 +78,19 @@ def uae(request):
     category = request.GET.get('category')
     
     if country:
-        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     elif category:
-        url = f'https://newsapi.org/v2/top-headlines?country=ae&category={category}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=ae&category={category}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     else:
-        url = f'https://newsapi.org/v2/top-headlines?country=ae&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=ae&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
@@ -105,19 +109,19 @@ def argentina(request):
     category = request.GET.get('category')
     
     if country:
-        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     elif category:
-        url = f'https://newsapi.org/v2/top-headlines?country=ar&category={category}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=ar&category={category}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     else:
-        url = f'https://newsapi.org/v2/top-headlines?country=ar&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=ar&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
@@ -137,19 +141,19 @@ def austria(request):
     category = request.GET.get('category')
     
     if country:
-        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     elif category:
-        url = f'https://newsapi.org/v2/top-headlines?country=at&category={category}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=at&category={category}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     else:
-        url = f'https://newsapi.org/v2/top-headlines?country=at&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=at&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
@@ -169,19 +173,19 @@ def australia(request):
     category = request.GET.get('category')
     
     if country:
-        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     elif category:
-        url = f'https://newsapi.org/v2/top-headlines?country=au&category={category}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=au&category={category}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     else:
-        url = f'https://newsapi.org/v2/top-headlines?country=au&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=au&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
@@ -201,19 +205,19 @@ def belgium(request):
     category = request.GET.get('category')
     
     if country:
-        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     elif category:
-        url = f'https://newsapi.org/v2/top-headlines?country=be&category={category}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=be&category={category}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     else:
-        url = f'https://newsapi.org/v2/top-headlines?country=be&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=be&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
@@ -233,19 +237,19 @@ def bulgaria(request):
     category = request.GET.get('category')
     
     if country:
-        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     elif category:
-        url = f'https://newsapi.org/v2/top-headlines?country=bg&category={category}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=bg&category={category}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     else:
-        url = f'https://newsapi.org/v2/top-headlines?country=bg&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=bg&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
@@ -265,19 +269,19 @@ def brazil(request):
     category = request.GET.get('category')
     
     if country:
-        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     elif category:
-        url = f'https://newsapi.org/v2/top-headlines?country=br&category={category}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=br&category={category}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     else:
-        url = f'https://newsapi.org/v2/top-headlines?country=br&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=br&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
@@ -297,19 +301,19 @@ def southafrica(request):
     category = request.GET.get('category')
     
     if country:
-        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     elif category:
-        url = f'https://newsapi.org/v2/top-headlines?country=za&category={category}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=za&category={category}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     else:
-        url = f'https://newsapi.org/v2/top-headlines?country=za&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=za&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
@@ -329,19 +333,19 @@ def canada(request):
     category = request.GET.get('category')
     
     if country:
-        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     elif category:
-        url = f'https://newsapi.org/v2/top-headlines?country=ca&category={category}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=ca&category={category}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     else:
-        url = f'https://newsapi.org/v2/top-headlines?country=ca&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=ca&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
@@ -360,19 +364,19 @@ def nigeria(request):
     category = request.GET.get('category')
     
     if country:
-        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     elif category:
-        url = f'https://newsapi.org/v2/top-headlines?country=ng&category={category}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=ng&category={category}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     else:
-        url = f'https://newsapi.org/v2/top-headlines?country=ng&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=ng&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
@@ -391,19 +395,19 @@ def germany(request):
     category = request.GET.get('category')
     
     if country:
-        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     elif category:
-        url = f'https://newsapi.org/v2/top-headlines?country=de&category={category}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=de&category={category}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     else:
-        url = f'https://newsapi.org/v2/top-headlines?country=de&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=de&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
@@ -423,19 +427,19 @@ def ukraine(request):
     category = request.GET.get('category')
     
     if country:
-        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     elif category:
-        url = f'https://newsapi.org/v2/top-headlines?country=ua&category={category}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=ua&category={category}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     else:
-        url = f'https://newsapi.org/v2/top-headlines?country=ua&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=ua&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
@@ -455,19 +459,19 @@ def netherlands(request):
     category = request.GET.get('category')
     
     if country:
-        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     elif category:
-        url = f'https://newsapi.org/v2/top-headlines?country=nl&category={category}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=nl&category={category}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     else:
-        url = f'https://newsapi.org/v2/top-headlines?country=nl&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=nl&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
@@ -487,19 +491,19 @@ def japan(request):
     category = request.GET.get('category')
     
     if country:
-        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     elif category:
-        url = f'https://newsapi.org/v2/top-headlines?country=jp&category={category}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=jp&category={category}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     else:
-        url = f'https://newsapi.org/v2/top-headlines?country=jp&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=jp&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
@@ -519,19 +523,19 @@ def egypt(request):
     category = request.GET.get('category')
     
     if country:
-        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     elif category:
-        url = f'https://newsapi.org/v2/top-headlines?country=eg&category={category}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=eg&category={category}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     else:
-        url = f'https://newsapi.org/v2/top-headlines?country=eg&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=eg&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
@@ -550,19 +554,19 @@ def morocco(request):
     category = request.GET.get('category')
     
     if country:
-        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     elif category:
-        url = f'https://newsapi.org/v2/top-headlines?country=ma&category={category}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=ma&category={category}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     else:
-        url = f'https://newsapi.org/v2/top-headlines?country=ma&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=ma&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
@@ -581,19 +585,19 @@ def israel(request):
     category = request.GET.get('category')
     
     if country:
-        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     elif category:
-        url = f'https://newsapi.org/v2/top-headlines?country=il&category={category}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=il&category={category}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     else:
-        url = f'https://newsapi.org/v2/top-headlines?country=il&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=il&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
@@ -613,19 +617,19 @@ def southkorea(request):
     category = request.GET.get('category')
     
     if country:
-        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     elif category:
-        url = f'https://newsapi.org/v2/top-headlines?country=kr&category={category}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=kr&category={category}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     else:
-        url = f'https://newsapi.org/v2/top-headlines?country=kr&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=kr&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
@@ -644,19 +648,19 @@ def france(request):
     category = request.GET.get('category')
     
     if country:
-        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     elif category:
-        url = f'https://newsapi.org/v2/top-headlines?country=fr&category={category}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=fr&category={category}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     else:
-        url = f'https://newsapi.org/v2/top-headlines?country=fr&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=fr&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
@@ -676,19 +680,19 @@ def uk(request):
     category = request.GET.get('category')
     
     if country:
-        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     elif category:
-        url = f'https://newsapi.org/v2/top-headlines?country=gb&category={category}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=gb&category={category}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     else:
-        url = f'https://newsapi.org/v2/top-headlines?country=gb&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=gb&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
@@ -707,19 +711,19 @@ def italy(request):
     category = request.GET.get('category')
     
     if country:
-        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     elif category:
-        url = f'https://newsapi.org/v2/top-headlines?country=it&category={category}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=it&category={category}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     else:
-        url = f'https://newsapi.org/v2/top-headlines?country=it&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=it&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
@@ -739,19 +743,19 @@ def portugal(request):
     category = request.GET.get('category')
     
     if country:
-        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     elif category:
-        url = f'https://newsapi.org/v2/top-headlines?country=pt&category={category}&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=pt&category={category}&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
         
     else:
-        url = f'https://newsapi.org/v2/top-headlines?country=pt&apiKey={wayne.NEWS_API_KEY}'
+        url = f'https://newsapi.org/v2/top-headlines?country=pt&apiKey={NEWS_API_KEY}'
         response = requests.get(url)
         data = response.json()
         articles = data['articles']
